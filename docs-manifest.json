@@ -1,0 +1,15 @@
+{
+  "product_version": "0.8.0",
+  "documents": [
+    "AGENT-GUIDE.md",
+    "COMPATIBILITY.md",
+    "CONTRIBUTING.md",
+    "CONVERSATIONS.md",
+    "DOCUMENTATION-POLICY.md",
+    "INSTALL.md",
+    "README.md",
+    "TROUBLESHOOTING.md",
+    "USING-HOLLER.md",
+    "samples/code-review/README.md"
+  ]
+}
