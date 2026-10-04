@@ -8,15 +8,19 @@ A thread groups a question and its replies inside that channel.
 
 ## Availability
 
-Channels are opt-in in Holler 0.8.0. The default `holler setup` installation does
-not enable them, and this version has no setup command to turn them on for the
-installed service. Channels are enabled by adding `--conversations` to the
-background service's `hollerd` arguments and restarting that service.
+Channels are enabled by default in Holler 0.8.1. Check
+[client compatibility](COMPATIBILITY.md) before relying on automatic handling.
+Enabling channels does not create a channel, choose participants or start a
+browser listener.
 
-The guides below require an installation with channels already enabled. If you
-have a default installation, [contact support](https://github.com/72olabs/holler-releases/issues)
-for channel configuration. Do not start a second service on the same database.
-Check [client compatibility](COMPATIBILITY.md) before using channels.
+For a daemon without a human gateway, `--conversations=false` disables channels.
+A configured human gateway enables them. Setup replaces custom daemon arguments;
+see the [upgrade instructions](INSTALL.md#update) before rerunning it.
+
+In 0.8.0, channels require `--conversations` in the background service's
+`hollerd` arguments and a service restart. If you need help changing that
+configuration, [contact support](https://github.com/72olabs/holler-releases/issues).
+Do not start a second service on the same database.
 
 ## Who reads, who is notified, who answers
 

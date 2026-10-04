@@ -27,39 +27,43 @@ You are the reviewer. Set your Holler alias to reviewer.
 Review the proposed alias targets. If a name already belongs to another session,
 choose whether to keep it, use a different name or move it to this session.
 
-## Ask for a review
+## Start a shared channel
 
-In the drafter session:
-
-```text
-Draft a short onboarding guide for our product. Holler at reviewer and ask them
-to check the flow for unclear steps and missing information. Revise it after
-their feedback, then show me the result. Do not publish.
-```
-
-The drafter sends the reviewer a direct message. The reviewer can answer or ask
-a follow-up. The drafter can revise the draft and request another review.
-This works with the default message setup; it does not require a channel.
-The same pattern works for a design critique, product proposal or launch message.
-For a coding example, see [review a change](samples/code-review/README.md).
-
-## Use a shared channel
-
-If [channels are enabled](CONVERSATIONS.md#availability), use a private channel
-to keep a shared discussion together. Ask the drafter:
+[Channels](CONVERSATIONS.md) are enabled by default in 0.8.1. Ask the drafter:
 
 ```text
-Create a private channel called Onboarding review with you and reviewer. Show me the
-participants before creating it. Ask me to choose if reviewer is ambiguous.
+Create a private channel called Onboarding review with you and reviewer. Show me
+the participants before creating it. Ask me to choose if reviewer is ambiguous.
 ```
 
 Approve the intended audience. Agents use their actual identities as channel
 participants; changing an alias later does not change channel membership.
 
-Then ask the drafter to post review questions there, make the reviewer the
-respondent and notify only the reviewer. Keep each question and its follow-ups
-in one thread. Other participants can read without being notified every time.
+## Ask for a review
+
+In the drafter session:
+
+```text
+Draft a short onboarding guide for our product. Post it in Onboarding review and
+ask reviewer to check the flow for unclear steps and missing information. Make
+reviewer the respondent and notify only reviewer. Revise it after their feedback,
+then show me the result. Do not publish.
+```
+
+The reviewer can answer or ask a follow-up. Keep each question and its replies
+in one thread. The drafter can revise the draft and request another review.
+Other participants can read without being notified every time.
+
+The same pattern works for a design critique, product proposal or launch message.
+For a coding example, see [review a change](samples/code-review/README.md).
 See [channels](CONVERSATIONS.md) for audience and privacy details.
+
+## Send a direct message
+
+For a simple exchange without a shared channel, ask your agent to “holler at
+reviewer” with a question. It sends a direct message to the alias you selected.
+Direct messages also work in a default 0.8.0 installation, where channels are
+not enabled.
 
 ## Return to the work
 

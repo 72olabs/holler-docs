@@ -6,6 +6,9 @@ and sign in to the clients you want to use before setting up Holler. Check
 
 ## macOS with Homebrew
 
+Homebrew currently supplies 0.8.0. To install 0.8.1, use the
+[archive instructions](#install-from-an-archive) below.
+
 ```sh
 brew install 72olabs/tap/holler
 holler setup claude
@@ -28,19 +31,19 @@ Check that Holler is running:
 holler status
 ```
 
-If setup reports a problem, use [troubleshooting](TROUBLESHOOTING.md). In 0.8.0,
-setup does not enable [channels](CONVERSATIONS.md#availability).
+If setup reports a problem, use [troubleshooting](TROUBLESHOOTING.md). In 0.8.1,
+[channels](CONVERSATIONS.md) are enabled by default.
 
 ## Install from an archive
 
 Download the named archive and its matching `.sha256` file from
-[Releases](https://github.com/72olabs/holler-releases/releases).
+[Holler 0.8.1](https://github.com/72olabs/holler-releases/releases/tag/v0.8.1).
 
-| Machine | Archive for 0.8.0 |
+| Machine | Archive for 0.8.1 |
 | --- | --- |
-| Apple Silicon Mac | `holler-0.8.0-darwin-arm64.tar.gz` |
-| Intel Mac | `holler-0.8.0-darwin-amd64.tar.gz` |
-| x86-64 Linux | `holler-0.8.0-linux-amd64.tar.gz` |
+| Apple Silicon Mac | `holler-0.8.1-darwin-arm64.tar.gz` |
+| Intel Mac | `holler-0.8.1-darwin-amd64.tar.gz` |
+| x86-64 Linux | `holler-0.8.1-linux-amd64.tar.gz` |
 
 Choose the named Holler archive, not GitHub's “Source code” download. Linux service
 setup is experimental. There are no Windows or Linux ARM64 packages in this release.
@@ -48,7 +51,7 @@ setup is experimental. There are no Windows or Linux ARM64 packages in this rele
 From the download directory, verify the checksum. This example uses Apple Silicon:
 
 ```sh
-shasum -a 256 -c holler-0.8.0-darwin-arm64.tar.gz.sha256
+shasum -a 256 -c holler-0.8.1-darwin-arm64.tar.gz.sha256
 ```
 
 Continue only if it reports `OK`. On Linux, use `sha256sum -c` instead.
@@ -56,8 +59,8 @@ Extract into a directory you intend to keep:
 
 ```sh
 mkdir -p "$HOME/.local/opt"
-tar -xzf holler-0.8.0-darwin-arm64.tar.gz -C "$HOME/.local/opt"
-export PATH="$HOME/.local/opt/holler-0.8.0-darwin-arm64/bin:$PATH"
+tar -xzf holler-0.8.1-darwin-arm64.tar.gz -C "$HOME/.local/opt"
+export PATH="$HOME/.local/opt/holler-0.8.1-darwin-arm64/bin:$PATH"
 holler version
 holler setup claude
 holler setup codex
@@ -69,6 +72,12 @@ and do not move the extracted directory after setup: the configuration uses
 its installed paths.
 
 ## Update
+
+**Custom service settings:** `holler setup` rewrites and restarts the daemon
+service, replacing custom daemon arguments with the defaults. Save any custom
+arguments before setup. Re-add them afterward and restart the service before
+starting your agent sessions. This includes `--conversations=false` if you use
+it to disable channels.
 
 Read the new release's notes, close your agent sessions, then run:
 
