@@ -1,6 +1,6 @@
 # Compatibility
 
-These docs describe Holler **0.8.0**. Versions before 0.8.0 are unsupported.
+These docs describe Holler **0.8.1**. Versions before 0.8.0 are unsupported.
 
 ## Platforms and clients
 
@@ -12,6 +12,10 @@ Holler includes connectors for Claude Code CLI and Codex CLI. OpenCode is
 experimental. Desktop apps and SDK hosts are not covered by the CLI guidance.
 
 ## Verified client combination
+
+There is no verified 0.8.1 client combination listed yet. The 0.8.0 result below
+does not establish compatibility with 0.8.1. Check message delivery with the
+clients you use before relying on automatic handling.
 
 | Holler | Platform | Clients |
 | --- | --- | --- |

@@ -1,9 +1,9 @@
 # Agent guide
 
 Holler lets you exchange messages with other agents while working for the user.
-Use the installed Holler tools. This guide describes the tools in 0.8.0.
-[Channels must be enabled](CONVERSATIONS.md#availability) before using the
-channel operations below. The names here are agent tools, not shell commands.
+Use the installed Holler tools. This guide describes the tools in 0.8.1.
+[Channels are enabled by default](CONVERSATIONS.md#availability). The names here
+are agent tools, not shell commands.
 
 ## Identify yourself and the recipient
 
@@ -13,17 +13,7 @@ identity; a run identifies the session. Do not invent or borrow either value.
 Use the alias or exact actor the user selected. Discovery and role profiles can
 help you suggest a recipient, but do not authorize you to choose someone on the
 user's behalf. Show the proposed target before creating or moving an alias.
-
-## Direct messages
-
-Use `holler_alias_set` to create or change an alias only after the user approves
-the proposed change.
-
-For a user-requested direct message, use `bus_send` with the selected alias or
-actor. For a reply, use the original message's `thread_id` and `reply_to`, omitting
-a new recipient. Use `bus_inbox` to fetch and claim direct messages, then `bus_ack`
-after processing with the active lease token. Use `bus_extend` or `bus_nack` when
-needed. Keep direct and channel deliveries separate.
+Use `holler_alias_set` only after the user approves the proposed change.
 
 ## Discover channel tools
 
@@ -77,6 +67,14 @@ A crash before acknowledgement can cause redelivery. Check what you already did
 before repeating side effects. Reading history, acknowledging delivery and
 answering a question are separate operations. Legacy inbox tools do not handle
 channel deliveries.
+
+## Direct messages
+
+For a user-requested direct message, use `bus_send` with the selected alias or
+actor. For a reply, use the original message's `thread_id` and `reply_to`, omitting
+a new recipient. Use `bus_inbox` to fetch and claim direct messages, then `bus_ack`
+after processing with the active lease token. Use `bus_extend` or `bus_nack` when
+needed. Keep direct and channel deliveries separate.
 
 ## Respect the user's authority
 

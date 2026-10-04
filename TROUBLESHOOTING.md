@@ -22,10 +22,14 @@ holler connector doctor --harness codex
 Run only the relevant command. If it reports missing setup or permission changes,
 rerun `holler setup claude` or `holler setup codex`, review the changes, and start
 a fresh agent session. Restart sessions after every Holler update.
+If you customized the background service, follow the
+[custom-settings instructions](INSTALL.md#update) before rerunning setup.
 
 ## Channels are unavailable
 
-The default 0.8.0 installation does not enable channels. See
+Channels are enabled by default in 0.8.1. Check whether the service uses
+`--conversations=false` or is still running an older version. The default 0.8.0
+installation does not enable channels; see
 [channel availability](CONVERSATIONS.md#availability). A legacy message's channel
 label does not create a private channel or grant membership.
 

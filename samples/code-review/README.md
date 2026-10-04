@@ -9,12 +9,16 @@ Ask one agent to set its alias to `builder` and the other to `reviewer`, followi
 the naming steps in [Using Holler](../../USING-HOLLER.md). Review the alias targets
 so each name reaches the intended session.
 
+Ask the builder to create a private review channel with the reviewer. Approve
+the intended participants before it creates the channel.
+
 ## Give the builder a task
 
 ```text
 Add a helpful message when the item list is empty. Test both an empty list and
-one real item. Holler at reviewer and ask them to review the change before you
-call it complete. Do not merge the change.
+one real item. Post the change and test results in our review channel. Ask
+reviewer to review it before you call it complete; make reviewer the respondent
+and notify only reviewer. Do not merge the change.
 ```
 
 The builder sends the reviewer the change's location, a short summary, test
@@ -29,8 +33,7 @@ Reviewer: That addresses my concern.
 ```
 
 This is an illustrative exchange; use the actual findings and evidence from
-your project. If channels are enabled, ask the agents to use a shared review
-channel, designate the reviewer to answer and notify only the reviewer.
+your project. Keep follow-ups in the same thread so the review stays together.
 
 ## Decide what happens next
 
