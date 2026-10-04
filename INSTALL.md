@@ -6,9 +6,6 @@ and sign in to the clients you want to use before setting up Holler. Check
 
 ## macOS with Homebrew
 
-Homebrew currently supplies 0.8.0. To install 0.8.1, use the
-[archive instructions](#install-from-an-archive) below.
-
 ```sh
 brew install 72olabs/tap/holler
 holler setup claude
