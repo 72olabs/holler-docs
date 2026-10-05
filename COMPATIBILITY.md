@@ -11,20 +11,26 @@ ARM64 packages are not available in this release.
 Holler includes connectors for Claude Code CLI and Codex CLI. OpenCode is
 experimental. Desktop apps and SDK hosts are not covered by the CLI guidance.
 
-## Verified client combination
-
-There is no verified 0.8.1 client combination listed yet. The 0.8.0 result below
-does not establish compatibility with 0.8.1. Check message delivery with the
-clients you use before relying on automatic handling.
+## Verified client combinations
 
 | Holler | Platform | Clients |
 | --- | --- | --- |
+| 0.8.1 | Linux x86-64 | Claude Code 2.1.289 and Codex CLI 0.154.0 |
+| 0.8.1 | Linux x86-64 | Claude Code 2.1.268 and Codex CLI 0.154.0 |
 | 0.8.0 | Linux x86-64 | Claude Code 2.1.268 and Codex CLI 0.154.0 |
 
 With these exact versions, direct messages were sent and received in both
 directions, idle agents were notified, and messaging recovered after the
-background service restarted. This does not verify channels or the browser
-interface, other client versions, or macOS behavior.
+background service restarted.
+
+An archive upgrade from 0.8.0 to 0.8.1 was also verified on Linux x86-64:
+message history was preserved, and a fresh Claude Code 2.1.268 session received
+and acknowledged messages after setup was rerun. This included a channel message
+with channels enabled by default after the upgrade.
+
+Full channel workflows and the explicit channel opt-out remain unverified.
+These results do not cover the browser interface, other client versions,
+macOS messaging or Homebrew upgrades.
 
 ## Known limitations
 
