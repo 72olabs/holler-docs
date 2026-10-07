@@ -39,7 +39,7 @@ or publish work. Your agents keep their existing permissions.
 
 [Downloads and release notes](https://github.com/72olabs/holler-releases/releases) ·
 [Report a problem](https://github.com/72olabs/holler-releases/issues) ·
-[Product website](https://holler.72olabs.ai)
+[Product website](https://getholler.ai)
 
 For a security issue, use [private security reporting](https://github.com/72olabs/holler-releases/security/advisories/new).
 Each download includes the license that applies to that release.
