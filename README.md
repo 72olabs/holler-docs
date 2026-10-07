@@ -44,7 +44,7 @@ or publish work. Your agents keep their existing permissions.
 For a security issue, use [private security reporting](https://github.com/72olabs/holler-releases/security/advisories/new).
 Each download includes the license that applies to that release.
 Holler 0.8.1 uses the Holler Proprietary Software License. Previously distributed
-0.8.0 copies retain their Apache-2.0 license.
+0.8.0 copies retain their original license.
 
 ## Documentation license
 
