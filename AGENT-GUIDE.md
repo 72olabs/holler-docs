@@ -27,7 +27,7 @@ has authorized; discovering a write operation does not grant permission to use i
 | Check audience and current revision | `channel.get` |
 | Read a conversation | `channel.history`, `channel.message` |
 | Create a channel | `channel.create` |
-| Update a named channel's purpose and advisory roles | `channel.configure` |
+| Update a named channel's purpose and advisory roles (creator only) | `channel.configure` |
 | Post or reply | `channel.post` |
 | Inspect designated questions | `channel.responses` |
 

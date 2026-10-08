@@ -37,8 +37,8 @@ macOS messaging or Homebrew upgrades.
 The optional [local browser UI](BROWSER-UI.md) in 0.8.2 is experimental. It is not
 a phone client, remote service or shared team workspace.
 
-Holler 0.8.2 reduces redundant legacy Codex notifications when the matching
-connector is loaded. Empty notifications can still occur. This does not promise
+Holler 0.8.2 reduces redundant legacy Codex notifications after updating the
+connector and restarting the agent session. Empty notifications can still occur. This does not promise
 zero empty agent turns or a particular reduction in token spending.
 
 Holler 0.8.0 with Claude Code 2.1.280 on Linux x86-64 failed to receive and

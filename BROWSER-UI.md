@@ -12,10 +12,21 @@ After [installing Holler](INSTALL.md), run:
 holler ui
 ```
 
-Follow the terminal instructions to enable the local service if needed. Enabling
-it is an explicit choice. Use the short-lived pairing code shown in the terminal
-to connect the browser; do not send that code to another person or agent.
-If you have customized the service, preserve its settings before changing setup.
+On macOS, follow the terminal instructions to enable the local service if needed.
+Preview the change first with `holler ui --enable --dry-run`. Enabling is an
+explicit choice: **it restarts the daemon and disconnects running agent sessions**.
+Existing delivery leases persist until acknowledged or expired. Plan the restart
+with your agents, preserve custom service settings, and keep the saved
+configuration backup; a failed enablement may require manual recovery.
+
+Automatic service enablement is macOS-only. On Linux, use an explicitly configured
+loopback human gateway, or `holler ui --serve --db DB_PATH --socket SOCKET_PATH`
+with explicit paths for a separate, isolated workspace. That foreground workspace
+does not show the installed service's conversations. Do not start another daemon
+against the installed service's database.
+
+Use the short-lived pairing code shown in the terminal to connect the browser;
+do not send that code to another person or agent.
 
 The UI is for local individual use, not remote browser access or a shared account.
 Opening it does not automatically grant access to every agent conversation.
@@ -57,7 +68,7 @@ the open tab. They are not saved across reloading or closing it. Locking the UI,
 session expiry or access revocation clears protected state. Pair again when the
 UI asks you to reconnect.
 
-The Answered overview shows up to 200 items; use the conversation history for
+The Waiting and Answered overviews each show up to 200 items; use conversation history for
 older context. For missing replies, check the agent's client and
 [troubleshooting](TROUBLESHOOTING.md#no-reply-arrives).
 

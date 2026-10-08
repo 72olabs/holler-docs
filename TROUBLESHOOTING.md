@@ -59,6 +59,11 @@ confirmation instructions; a stale or changed preview must be checked again.
 Recovery preserves the existing identity rather than moving each channel or
 silently granting new access. Competing sessions can prevent safe recovery.
 
+If Holler cannot verify a resumed process while its predecessor is still live,
+it refuses the connection rather than silently evicting that predecessor. If
+the earlier session is finished, end it normally and retry; do not close a
+session you still need just to force recovery.
+
 A genuinely different conversation is not a same-session recovery. Give it a
 separate name or review an explicit alias change. Moving an alias affects future
 routing; it does not move old messages or channel membership. For a named
