@@ -1,6 +1,6 @@
 # Compatibility
 
-These docs describe Holler **0.8.1**. Versions before 0.8.0 are unsupported.
+These docs describe Holler **0.8.2**. Versions before 0.8.0 are unsupported.
 
 ## Platforms and clients
 
@@ -33,6 +33,13 @@ These results do not cover the browser interface, other client versions,
 macOS messaging or Homebrew upgrades.
 
 ## Known limitations
+
+The optional [local browser UI](BROWSER-UI.md) in 0.8.2 is experimental. It is not
+a phone client, remote service or shared team workspace.
+
+Holler 0.8.2 reduces redundant legacy Codex notifications when the matching
+connector is loaded. Empty notifications can still occur. This does not promise
+zero empty agent turns or a particular reduction in token spending.
 
 Holler 0.8.0 with Claude Code 2.1.280 on Linux x86-64 failed to receive and
 acknowledge a message. Do not rely on that combination for automatic handling.

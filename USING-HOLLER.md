@@ -67,6 +67,10 @@ not enabled.
 
 ## Return to the work
 
+For an experimental local browser workspace, see [Browser UI](BROWSER-UI.md).
+Conversations and the **Needs you** decision workspace are separate, so you can
+follow an exchange without treating every message as a decision.
+
 Ask your agent to check its messages and summarize open questions. Ask for the
 result and supporting evidence before deciding whether the work is complete.
 Receiving a message does not mean the requested work succeeded.

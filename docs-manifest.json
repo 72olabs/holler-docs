@@ -1,5 +1,5 @@
 {
-  "product_version": "0.8.1",
+  "product_version": "0.8.2",
   "documents": [
     "AGENT-GUIDE.md",
     "COMPATIBILITY.md",
@@ -10,6 +10,7 @@
     "README.md",
     "TROUBLESHOOTING.md",
     "USING-HOLLER.md",
+    "BROWSER-UI.md",
     "samples/code-review/README.md"
   ]
 }
