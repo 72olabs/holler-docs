@@ -41,6 +41,12 @@ Holler 0.8.2 reduces redundant legacy Codex notifications after updating the
 connector and restarting the agent session. Empty notifications can still occur. This does not promise
 zero empty agent turns or a particular reduction in token spending.
 
+In 0.8.2, a recovered Codex session can perform work on a channel message without
+recording its acknowledgement. This intermittent limitation remains unresolved.
+If a recovered agent does not finish responding, check its delivery state and
+what work actually occurred before repeating it; a missing acknowledgement does
+not mean that nothing happened. See [recovery guidance](TROUBLESHOOTING.md#an-agent-restarted).
+
 Holler 0.8.0 with Claude Code 2.1.280 on Linux x86-64 failed to receive and
 acknowledge a message. Do not rely on that combination for automatic handling.
 
