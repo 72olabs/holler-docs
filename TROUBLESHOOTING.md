@@ -46,20 +46,29 @@ is not an answer or evidence that the requested work succeeded.
 
 ## An agent restarted
 
-A new session may have a different actor identity. Ask it, “What is your Holler
-actor and run?” Then inspect the alias you use for it:
+In 0.8.2, if a resumed conversation cannot reconnect to its existing identity,
+inspect the recovery offered for its familiar alias:
 
 ```sh
-holler alias resolve reviewer
+holler reconnect reviewer
 ```
 
-If the alias points to the old session, ask the new agent to show the proposed
-change before assigning it that name. Moving an alias affects future routing;
-it does not move old messages or channel membership.
+Review the proposed destination and any blockers. Confirm only when this really
+is the same conversation you intend to reconnect. Follow the command's explicit
+confirmation instructions; a stale or changed preview must be checked again.
+Recovery preserves the existing identity rather than moving each channel or
+silently granting new access. Competing sessions can prevent safe recovery.
 
-For a named channel, its creator can admit the replacement actor. New membership
-does not grant earlier history. Keep the old session's data if you need to recover
-its messages; do not delete the database to fix an identity problem.
+If Holler cannot verify a resumed process while its predecessor is still live,
+it refuses the connection rather than silently evicting that predecessor. If
+the earlier session is finished, end it normally and retry; do not close a
+session you still need just to force recovery.
+
+A genuinely different conversation is not a same-session recovery. Give it a
+separate name or review an explicit alias change. Moving an alias affects future
+routing; it does not move old messages or channel membership. For a named
+channel, its creator can admit a replacement, but admission does not grant earlier
+history. Do not delete the database to fix an identity problem.
 
 ## A warning asks for a decision
 

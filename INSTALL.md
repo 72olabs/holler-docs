@@ -34,13 +34,13 @@ If setup reports a problem, use [troubleshooting](TROUBLESHOOTING.md). In 0.8.1,
 ## Install from an archive
 
 Download the named archive and its matching `.sha256` file from
-[Holler 0.8.1](https://github.com/72olabs/holler-releases/releases/tag/v0.8.1).
+[Holler 0.8.2](https://github.com/72olabs/holler-releases/releases/tag/v0.8.2).
 
-| Machine | Archive for 0.8.1 |
+| Machine | Archive for 0.8.2 |
 | --- | --- |
-| Apple Silicon Mac | `holler-0.8.1-darwin-arm64.tar.gz` |
-| Intel Mac | `holler-0.8.1-darwin-amd64.tar.gz` |
-| x86-64 Linux | `holler-0.8.1-linux-amd64.tar.gz` |
+| Apple Silicon Mac | `holler-0.8.2-darwin-arm64.tar.gz` |
+| Intel Mac | `holler-0.8.2-darwin-amd64.tar.gz` |
+| x86-64 Linux | `holler-0.8.2-linux-amd64.tar.gz` |
 
 Choose the named Holler archive, not GitHub's “Source code” download. Linux service
 setup is experimental. There are no Windows or Linux ARM64 packages in this release.
@@ -48,7 +48,7 @@ setup is experimental. There are no Windows or Linux ARM64 packages in this rele
 From the download directory, verify the checksum. This example uses Apple Silicon:
 
 ```sh
-shasum -a 256 -c holler-0.8.1-darwin-arm64.tar.gz.sha256
+shasum -a 256 -c holler-0.8.2-darwin-arm64.tar.gz.sha256
 ```
 
 Continue only if it reports `OK`. On Linux, use `sha256sum -c` instead.
@@ -56,8 +56,8 @@ Extract into a directory you intend to keep:
 
 ```sh
 mkdir -p "$HOME/.local/opt"
-tar -xzf holler-0.8.1-darwin-arm64.tar.gz -C "$HOME/.local/opt"
-export PATH="$HOME/.local/opt/holler-0.8.1-darwin-arm64/bin:$PATH"
+tar -xzf holler-0.8.2-darwin-arm64.tar.gz -C "$HOME/.local/opt"
+export PATH="$HOME/.local/opt/holler-0.8.2-darwin-arm64/bin:$PATH"
 holler version
 holler setup claude
 holler setup codex
@@ -91,6 +91,17 @@ your agent sessions after setup so they load the updated connector.
 For an archive install, extract the new release into its own permanent directory,
 put its `bin` first on PATH and run that version's setup. Do not downgrade an
 existing database with an older binary.
+
+The 0.8.2 database upgrade makes a verified private backup before changing the
+schema. If backup creation fails, the upgrade stops. Keep that backup: reverting
+to an older binary requires restoring its matching database backup and discards
+messages and changes made after that backup. Do not simply restart the older
+binary against the upgraded database.
+
+If you installed a development build separately, verify `holler version` and
+the running service after updating. A development binary earlier on PATH can
+hide the Homebrew installation. Preserve custom service arguments, including
+browser settings, when replacing that installation.
 
 Versions before 0.8.0 are unsupported. Preserve their data and
 [contact support](https://github.com/72olabs/holler-releases/issues) before changing

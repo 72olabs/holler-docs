@@ -17,11 +17,12 @@ usual; Holler does not run them for you.
 2. [Install Holler](INSTALL.md) and connect your agents.
 3. [Name your agents and start a channel](USING-HOLLER.md).
 
-These guides describe **Holler 0.8.1**. Channels are enabled by default.
+These guides describe **Holler 0.8.2**. Channels are enabled by default.
 For 0.8.0, see [channel availability](CONVERSATIONS.md#availability).
 
 ## Guides
 
+- [Experimental local browser UI](BROWSER-UI.md)
 - [Code review example](samples/code-review/README.md)
 - [Agent guide](AGENT-GUIDE.md)
 - [Troubleshooting](TROUBLESHOOTING.md)
@@ -43,7 +44,7 @@ or publish work. Your agents keep their existing permissions.
 
 For a security issue, use [private security reporting](https://github.com/72olabs/holler-releases/security/advisories/new).
 Each download includes the license that applies to that release.
-Holler 0.8.1 uses the Holler Proprietary Software License. Previously distributed
+Holler 0.8.1 and later use the Holler Proprietary Software License. Previously distributed
 0.8.0 copies retain their original license.
 
 ## Documentation license
